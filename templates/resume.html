@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% block title %}Резюме{% endblock %}
+
+{% block header %}Резюме Alina{% endblock %}
+
+{% block content %}
+
+    <section id="profile-picture" class="text-center my-4">
+    <img src="{{ url_for('static', filename='images/profile_picture.jpg') }}" alt="Profile Picture" class="img-fluid rounded-circle">
+</section>
+
+<section id="about" class="my-4">
+    <h2>Про себе</h2>
+    <p>Привіт! Мене звати Аліна. Я програміст-розробник веб-додатків, який живе і дихає кодом (не без чашки кави, звісно!). Маю досвід у створенні функціональних та інтуїтивно зрозумілих веб-рішень, від фронтенду до бекенду. Знаю, як зробити інтерфейс стильним, а взаємодію з користувачем — максимально зручною. Мої улюблені мови — JavaScript, HTML, CSS, а також люблю працювати з різними фреймворками та бібліотеками. Не боюся викликів і завжди готова вирішити складні задачі (і зробити це з посмішкою). Якщо ви хочете створити продукт, який буде не тільки працювати, а й захоплювати користувачів, я — саме та людина, яка вам потрібна!</p>
+</section>
+
+<section id="education" class="my-4">
+    <h2>Освіта</h2>
+    <ul>
+        <li>Студентка, Прикарпатський національний університет імені Василя Стефаника, факультет інформатики (2022 — теперішній час).</li>
+        <li>Пройшла курси з веб-розробки, включаючи:
+            <ul>
+                <li>Основи JavaScript</li>
+                <li>Розробка веб-додатків з використанням React та Node.js</li>
+                <li>Основи роботи з базами даних</li>
+                <li>Курс "Основи веб-розробки" від IT Академії (2021)</li>
+            </ul>
+        </li>
+        <li>Ці курси дозволили мені глибше зануритися у світ веб-технологій та розвивати свої навички у програмуванні</li>
+    </ul>
+</section>
+
+<section id="skills" class="my-4">
+    <h2>Навички</h2>
+    <ul>
+        <li>Мови програмування: Python, JavaScript, C++</li>
+        <li>Фреймворки: Django, Flask, React</li>
+        <li>Інструменти: Git, Docker, AWS</li>
+    </ul>
+</section>
+
+<section id="experience" class="my-4">
+    <h2>Досвід роботи</h2>
+    <ul>
+        <li>Компанія "TechMagic" - Розробник програмного забезпечення (2022 - дотепер)</li>
+        <li>Проект "Сайт резюме" - створення особистого веб-сайту для демонстрації своїх навичок та досвіду</li>
+    </ul>
+    <div class="row">
+        <div class="col-md-4">
+            <img src="{{ url_for('static', filename='images/project1.jpg') }}" alt="Проект 1" class="img-fluid">
+        </div>
+        <div class="col-md-4">
+            <img src="{{ url_for('static', filename='images/project2.jpg') }}" alt="Проект 2" class="img-fluid">
+        </div>
+        <div class="col-md-4">
+            <img src="{{ url_for('static', filename='images/project3.jpg') }}" alt="Проект 3" class="img-fluid">
+        </div>
+    </div>
+</section>
+{% endblock %}
+

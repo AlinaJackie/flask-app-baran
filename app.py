@@ -1,12 +1,11 @@
-from flask import Flask
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
-
 @app.route('/')
-def hello_world():  # put application's code here
-    return 'Hello World!'
-
+def resume():
+    return render_template('resume.html', title="Моє резюме")
 
 if __name__ == '__main__':
-    app.run()
+    app.run(debug=True)
+
