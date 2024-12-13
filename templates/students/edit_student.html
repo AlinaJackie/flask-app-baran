@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Редагувати студента</h1>
+
+<form method="POST">
+  {{ form.hidden_tag() }}
+  <div class="mb-3">
+    <label for="name" class="form-label">Ім'я</label>
+    {{ form.name(class="form-control") }}
+  </div>
+
+  <div class="mb-3">
+    <label for="email" class="form-label">Email</label>
+    {{ form.email(class="form-control") }}
+  </div>
+
+  <div class="mb-3">
+    <label for="age" class="form-label">Вік</label>
+    {{ form.age(class="form-control") }}
+  </div>
+
+  <div class="mb-3">
+    <label for="group" class="form-label">Група</label>
+    {{ form.group(class="form-control") }}
+  </div>
+
+  <button type="submit" class="btn btn-primary">Оновити</button>
+</form>
+{% endblock %}
+
