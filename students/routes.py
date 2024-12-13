@@ -1,7 +1,7 @@
 from flask import render_template, redirect, url_for, request, flash
 from flask_login import login_required, login_user, logout_user, current_user
 from . import students
-from .models import Group, Student #, User
+from .models import Group, Student, User
 from .forms import StudentForm, RegistrationForm, LoginForm
 from extensions import db
 
