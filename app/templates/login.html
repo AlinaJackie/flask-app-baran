@@ -1,0 +1,18 @@
+<!-- app/templates/login.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <h2>Login</h2>
+    <form method="POST" action="{{ url_for('login') }}">
+        {{ form.hidden_tag() }}
+        <p>{{ form.email.label }} {{ form.email(size=20) }} {{ form.email.errors }}</p>
+        <p>{{ form.password.label }} {{ form.password(size=20) }} {{ form.password.errors }}</p>
+        <p>{{ form.submit() }}</p>
+    </form>
+</body>
+</html>
