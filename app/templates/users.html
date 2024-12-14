@@ -1,21 +1,100 @@
-<!-- app/templates/users.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Users</title>
+    <style>
+        /* Основні стилі */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fc;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            color: #007bff;
+        }
+
+        .user-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .user-list li {
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .user-list li:last-child {
+            border-bottom: none;
+        }
+
+        .user-list .username {
+            font-weight: bold;
+            color: #333;
+        }
+
+        .user-list .email {
+            color: #555;
+        }
+
+        .no-users {
+            text-align: center;
+            color: #777;
+        }
+
+        /* Стилізація кнопок */
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin-top: 20px;
+            background-color: #007bff;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 <body>
-    <h2>All Users</h2>
-    {% if users %}
-        <ul>
-        {% for user in users %}
-            <li>{{ user.username }} - {{ user.email }}</li>
-        {% endfor %}
-        </ul>
-    {% else %}
-        <p>No users found.</p>
-    {% endif %}
+    <div class="container">
+        <h2>All Users</h2>
+        {% if users %}
+            <ul class="user-list">
+            {% for user in users %}
+                <li>
+                    <span class="username">{{ user.username }}</span>
+                    <span class="email">{{ user.email }}</span>
+                </li>
+            {% endfor %}
+            </ul>
+        {% else %}
+            <p class="no-users">No users found.</p>
+        {% endif %}
+        <a href="{{ url_for('home') }}" class="btn">Back to Home</a>
+    </div>
 </body>
 </html>
